@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+<record id="ir_exports_action" model="ir.actions.act_window">
+    <field name="name">Export Profiles</field>
+    <field name="res_model">ir.exports</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree</field>
+</record>
+
+<menuitem id="ir_exports_menu"
+          parent="base.next_id_2"
+          name="Export Profiles"
+          action="ir_exports_action"/>
+
+<record id="ir_exports_tree_view" model="ir.ui.view">
+    <field name="name">Export Profile tree</field>
+    <field name="model">ir.exports</field>
+    <field name="arch" type="xml">
+        <tree string="Export Profiles" editable="bottom">
+            <field name="name"/>
+            <field name="resource"/>
+            <field name="company_id"/>
+        </tree>
+    </field>
+</record>
+
+
+</odoo>
